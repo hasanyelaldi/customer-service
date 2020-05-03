@@ -106,11 +106,4 @@ public class Customer implements Serializable {
         this.address = address;
     }
 
-    @Override
-    public String toString() {
-        return "Customer [id=" + id + "," +
-                " name=" + name + "," +
-                " email=" + email + "," +
-                " active=" + active + "]";
-    }
 }
