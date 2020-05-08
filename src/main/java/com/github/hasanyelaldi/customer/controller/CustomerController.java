@@ -27,6 +27,16 @@ public class CustomerController {
         return customerService.getCustomers();
     }
 
+    @GetMapping("/active-customers")
+    public List<Customer> getActiveCustomers() {
+        return customerService.getCustomersByStatus(true);
+    }
+
+    @GetMapping("/passive-customers")
+    public List<Customer> getPassiveCustomers() {
+        return customerService.getCustomersByStatus(false);
+    }
+
     @PostMapping("/customer")
     public Customer postCustomer(@RequestBody Customer newCustomer) {
         return customerService.createCustomer(newCustomer);

@@ -28,6 +28,10 @@ public class CustomerService {
         return customerRepository.findAll();
     }
 
+    public List<Customer> getCustomersByStatus(boolean status) {
+        return customerRepository.findAllByActive(status);
+    }
+
     public Customer createCustomer(Customer customer) {
         customer.setCreatedTime(new Date());
         return customerRepository.save(customer);
@@ -42,4 +46,5 @@ public class CustomerService {
     public void deleteCustomer(long id) {
         customerRepository.deleteById(id);
     }
+
 }
